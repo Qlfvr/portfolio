@@ -4,15 +4,15 @@ import styled from "@emotion/styled"
 // import background from "../assets/bg.png"
 import BgImage from "../components/bg-image"
 import {mq} from "../utils/utils"
+import SideMenu from "./side-menu"
 
 
 
 const Container = styled.div(
     mq({
-      margin: ["3rem 2rem", "3rem 4rem", "3rem 4rem", "3rem 8rem"],
       display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
+      flexDirection: "row",
+    
       position : "absolute"
     })
   )
@@ -26,8 +26,9 @@ export default function Layout({ children }) {
         `}
       /> */}
       <BgImage />
+      
       <Container>
-
+      <SideMenu />
       {children}
 
       </Container>
