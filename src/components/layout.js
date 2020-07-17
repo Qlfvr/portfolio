@@ -1,36 +1,25 @@
 import React from "react"
-import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-// import background from "../assets/bg.png"
 import BgImage from "../components/bg-image"
-import {mq} from "../utils/utils"
-import SideMenu from "./side-menu"
-
-
+import { mq } from "../utils/utils"
+import Sidebar from "./sidebar"
 
 const Container = styled.div(
-    mq({
-      display: "flex",
-      flexDirection: "row",
-    
-      position : "absolute"
-    })
-  )
+  mq({
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    height: "100%",
+  })
+)
 
 export default function Layout({ children }) {
   return (
     <>
-      {/* <Global
-        styles={css`
-        height : 1vh
-        `}
-      /> */}
       <BgImage />
-      
       <Container>
-      <SideMenu />
-      {children}
-
+        <Sidebar/>
+        {children}
       </Container>
     </>
   )
