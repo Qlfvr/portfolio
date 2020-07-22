@@ -11,6 +11,7 @@ function Sidebar() {
     zIndex: 2,
     backgroundColor: "white",
     padding: "1rem",
+    overflow :"auto"
   })
   const [isActive, setIsActive] = useState(false)
 
@@ -25,15 +26,16 @@ function Sidebar() {
   return (
     <div
       css={{
-        position: "absolute",
+        gridColumn: "1/2",
+        gridRow: "1/2",
+
         width: "20rem",
-        height: "100%",
+        height: "100vh",
         display: "flex",
         flexDirection: "row",
         backgroundColor: "white",
         marginLeft: marginLeft,
         transitionDuration: "1s",
-        alignItems: "stretch",
         backgroundColor: "white",
       }}
     >

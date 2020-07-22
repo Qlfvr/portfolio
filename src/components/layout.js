@@ -6,19 +6,21 @@ import Sidebar from "./sidebar"
 
 const Container = styled.div(
   mq({
-    display: "flex",
-    flexDirection: "row",
-    width: "100%",
-    height: "100%",
+    display: "grid",
+    gridTemplateRows: "100vh",
+    gridTemplateColumns: "1fr",
+    overflow:"hidden"
+  
   })
 )
 
 export default function Layout({ children }) {
   return (
     <>
-      <BgImage css={{display : "none"}} />
       <Container>
-        <Sidebar/>
+        <BgImage />
+
+        <Sidebar />
         {children}
       </Container>
     </>

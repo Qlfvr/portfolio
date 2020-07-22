@@ -13,11 +13,12 @@ export default function IndexPage() {
       <Layout>
         <div
           css={mq({
-            display: "flex",
-            flexDirection: "column",
+            gridColumn: "1/2",
+            gridRow: "1/2",
             marginTop: "3rem",
-            marginRight: ["1rem", "4rem", null, "8rem"],
+            marginRight: ["0rem", "4rem", null, "8rem"],
             marginLeft: ["5rem", "6rem", null, "8rem"],
+            overflow:"auto"
           })}
         >
           <p css={{ fontSize: "2em" }}>Hi, I am Quentin Lefèvre</p>
@@ -40,9 +41,9 @@ export default function IndexPage() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             vulputate dolor non ligula tempor condimentum. Quisque tortor neque,
             mollis sed turpis eu, finibus gravida libero.
-            <Button label="Me contacter" />
-
           </p>
+
+          <Button label="Me contacter" />
 
         </div>
       </Layout>
