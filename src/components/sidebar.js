@@ -2,16 +2,16 @@ import React, { useState } from "react"
 import styled from "@emotion/styled"
 import BurgerBtn from "./burger-btn"
 import SidebarMenu from "./sidebar-menu"
-import { withAssetPrefix } from "gatsby"
 
 function Sidebar() {
-  const Container = styled.div({
+  const Content = styled.div({
     width: "40rem",
     position: "relative",
     zIndex: 2,
     backgroundColor: "white",
     padding: "1rem",
-    overflow :"auto"
+    overflow :"auto",
+    direction: "rtl"
   })
   const [isActive, setIsActive] = useState(false)
 
@@ -36,11 +36,11 @@ function Sidebar() {
         backgroundColor: "white",
         marginLeft: marginLeft,
         transitionDuration: "1s",
-        backgroundColor: "white",
       }}
     >
-      <Container>
+      <Content>
         <SidebarMenu />
+        <div css={{direction: "ltr"}}>
         <h5>JavaScript</h5>
 
         <p>
@@ -52,7 +52,8 @@ function Sidebar() {
 
         <h5>Back-End</h5>
         <p>Node.js / express / MongoDB / Mongoose</p>
-      </Container>
+        </div>
+      </Content>
       <BurgerBtn onClick={handleClick} isActive={isActive} />
     </div>
   )
