@@ -21,7 +21,7 @@ export default function IndexPage() {
             overflow:"auto"
           })}
         >
-          <p css={{ fontSize: "2em" }}>Hi, I am Quentin Lefèvre</p>
+          <p css={mq({fontSize: ["1.2rem","2rem"] }) }>Hi, I am Quentin Lefèvre</p>
           <h1
             css={mq({
               fontSize: ["1.5rem", "2rem", "2.5rem", "3rem"],
