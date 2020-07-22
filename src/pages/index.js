@@ -15,7 +15,7 @@ export default function IndexPage() {
           css={mq({
             gridColumn: "1/2",
             gridRow: "1/2",
-            marginTop: "3rem",
+            paddingTop: "3rem",
             marginRight: ["0rem", "4rem", null, "8rem"],
             marginLeft: ["5rem", "6rem", null, "8rem"],
             overflow:"auto"
