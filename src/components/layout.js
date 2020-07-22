@@ -16,7 +16,7 @@ const Container = styled.div(
 export default function Layout({ children }) {
   return (
     <>
-      <BgImage />
+      <BgImage css={{display : "none"}} />
       <Container>
         <Sidebar/>
         {children}

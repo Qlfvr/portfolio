@@ -5,7 +5,7 @@ import { mq } from "../utils/utils"
 import burger from "../assets/burger.css"
 import { Button } from "../components/button"
 
-export default function Index() {
+export default function IndexPage() {
   return (
     <>
       <Global styles={burger} />
@@ -40,9 +40,10 @@ export default function Index() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             vulputate dolor non ligula tempor condimentum. Quisque tortor neque,
             mollis sed turpis eu, finibus gravida libero.
+            <Button label="Me contacter" />
+
           </p>
 
-          <Button label="Me contacter" />
         </div>
       </Layout>
     </>
