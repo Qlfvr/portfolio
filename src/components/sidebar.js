@@ -1,17 +1,38 @@
 import React, { useState } from "react"
 import styled from "@emotion/styled"
 import BurgerBtn from "./burger-btn"
-import SidebarMenu from "./sidebar-menu"
+import { Skills, Test } from "../content/data"
 
 function Sidebar() {
+  const NavLink = styled.button({
+    fontSize: "0.9rem",
+    padding: "0 0.5rem",
+    fontWeight: "bold",
+    "&:after": {
+      content: "''",
+      height: "3px",
+      width: "0px",
+      display: "block",
+      background: "#333333",
+    },
+    "&.active:after": { width: "100%", transitionDuration: "500ms" },
+  })
+
+  const Menu = styled.nav({
+    display: "flex",
+    justifyContent: "space-between",
+    margin: "0 0 1.5rem 0",
+    direction: "ltr",
+  })
+
   const Content = styled.div({
     width: "40rem",
     position: "relative",
     zIndex: 2,
     backgroundColor: "white",
     padding: "1rem",
-    overflow :"auto",
-    direction: "rtl"
+    overflow: "auto",
+    direction: "rtl",
   })
   const [isActive, setIsActive] = useState(false)
 
@@ -23,12 +44,40 @@ function Sidebar() {
 
   isActive ? (marginLeft = "0rem") : (marginLeft = "-16rem")
 
+  function show(event, target) {
+    const tabs = document.getElementsByClassName("tab")
+
+    //hide every section to start clean
+    for (let index = 0; index < tabs.length; index++) {
+      const element = tabs[index]
+      element.style.display = "none"
+    }
+
+    // reveal targeted section
+
+    const targetedTab = document.getElementById(target)
+    targetedTab.style.display = "block"
+
+    //delete active
+
+    const navLinks = document.getElementsByClassName("nav-link")
+
+    for (let index = 0; index < navLinks.length; index++) {
+      const element = navLinks[index]
+      element.classList.remove("active")
+    }
+
+    // make link active
+
+    console.log(event.target)
+    event.target.className += " active"
+  }
+
   return (
     <div
       css={{
         gridColumn: "1/2",
         gridRow: "1/2",
-
         width: "20rem",
         height: "100vh",
         display: "flex",
@@ -39,19 +88,32 @@ function Sidebar() {
       }}
     >
       <Content>
-        <SidebarMenu />
-        <div css={{direction: "ltr"}}>
-        <h5>JavaScript</h5>
-
-        <p>
-          ES2015+ / React / Gatsby / node.js / CSS-in-JS (Emotion) / express
-        </p>
-
-        <h5>Front-End</h5>
-        <p>HTML 5 / CSS 3 / Sass / Bootstrap / Tailwind / Wordpress / Gatsby</p>
-
-        <h5>Back-End</h5>
-        <p>Node.js / express / MongoDB / Mongoose</p>
+        <Menu>
+          <NavLink
+            className="nav-link active"
+            onClick={event => {
+              show(event, "skills")
+            }}
+          >
+            Skills
+          </NavLink>
+          <NavLink
+            className="nav-link"
+            onClick={event => {
+              show(event, "test")
+            }}
+          >
+            Test
+          </NavLink>
+          {/* <NavLink  >Details</NavLink> */}
+        </Menu>
+        <div css={{ direction: "ltr" }}>
+          <div id="skills" className="tab">
+            <Skills />
+          </div>
+          <div css={{display:"none"}} id="test" className="tab">
+            <Test />
+          </div>
         </div>
       </Content>
       <BurgerBtn onClick={handleClick} isActive={isActive} />
