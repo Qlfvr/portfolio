@@ -2,7 +2,8 @@ import React from "react"
 import styled from "@emotion/styled"
 import BgImage from "../components/bg-image"
 import { mq } from "../utils/utils"
-import Sidebar from "./sidebar"
+import Main from "../components/main"
+
 
 const Container = styled.div(
   mq({
@@ -15,12 +16,14 @@ const Container = styled.div(
 )
 
 export default function Layout({ children }) {
+
   return (
     <>
       <Container>
         <BgImage />
+        <Main />
 
-        <Sidebar />
+        
         {children}
       </Container>
     </>
