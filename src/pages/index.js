@@ -3,12 +3,12 @@ import { Global } from "@emotion/core"
 import Layout from "../components/layout"
 import { mq } from "../utils/utils"
 import burger from "../assets/burger.css"
-import { Button } from "../components/button"
+import style from "../assets/style.css"
 
 export default function IndexPage() {
   return (
     <>
-      <Global styles={burger} />
+      <Global styles={burger + style} />
 
       <Layout>
         <div
