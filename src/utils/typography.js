@@ -5,7 +5,7 @@ import Typography from "typography"
 // const typography = new Typography(altonTheme)
 
 const typography = new Typography({
-  baseFontSize: "18px",
+  baseFontSize: "15px",
   baseLineHeight: 1.666,
   headerColor : "#333333",
   bodyColor: "#333333",
