@@ -3,7 +3,7 @@ import React from "react"
 export default function BurgerBtn(props) {
   const style = {
     width: "4rem",
-    boxShadow: " 0px 0px 20px 0px rgba(0,0,0,0.10)",
+    boxShadow: " 0px 0px 10px 0px rgba(0,0,0,0.10)",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
