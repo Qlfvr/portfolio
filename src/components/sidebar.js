@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import styled from "@emotion/styled"
 import BurgerBtn from "./burger-btn"
-import { Skills, Test } from "../content/data"
+import { Skills, FindMe } from "../content/data"
+import Education from "./education"
 
 function Sidebar() {
   const NavLink = styled.button({
@@ -42,7 +43,7 @@ function Sidebar() {
 
   let marginLeft = "-16rem"
 
-  isActive ? (marginLeft = "0rem") : (marginLeft = "-16rem")
+  isActive ? (marginLeft = "0rem") : (marginLeft = "-20rem")
 
   function show(event, target) {
     const tabs = document.getElementsByClassName("tab")
@@ -69,7 +70,6 @@ function Sidebar() {
 
     // make link active
 
-    console.log(event.target)
     event.target.className += " active"
   }
 
@@ -78,13 +78,14 @@ function Sidebar() {
       css={{
         gridColumn: "1/2",
         gridRow: "1/2",
-        width: "20rem",
+        width: "25rem",
+        maxWidth: "100vw",
         height: "100vh",
         display: "flex",
         flexDirection: "row",
         backgroundColor: "white",
         marginLeft: marginLeft,
-        transitionDuration: "1s",
+        transitionDuration: "0.5s",
       }}
     >
       <Content>
@@ -100,19 +101,31 @@ function Sidebar() {
           <NavLink
             className="nav-link"
             onClick={event => {
-              show(event, "test")
+              show(event, "edu")
             }}
           >
-            Test
+            Education
           </NavLink>
+          <NavLink
+            className="nav-link"
+            onClick={event => {
+              show(event, "findMe")
+            }}
+          >
+            Find me
+          </NavLink>
+
           {/* <NavLink  >Details</NavLink> */}
         </Menu>
-        <div css={{ direction: "ltr" }}>
+        <div css={{ direction: "ltr", marginTop: "3rem" }}>
           <div id="skills" className="tab">
             <Skills />
           </div>
-          <div css={{display:"none"}} id="test" className="tab">
-            <Test />
+          <div css={{ display: "none" }} id="findMe" className="tab">
+            <FindMe />
+          </div>
+          <div css={{ display: "none" }} id="edu" className="tab">
+            <Education />
           </div>
         </div>
       </Content>
