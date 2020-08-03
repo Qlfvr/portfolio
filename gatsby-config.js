@@ -7,6 +7,13 @@
 module.exports = {
   /* Your site config here */
   plugins: [
+    {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `images`,
+          path: `${__dirname}/src/assets/img`,
+        },
+      },
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
@@ -29,5 +36,8 @@ module.exports = {
         //   },
         },
       },
+
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }
