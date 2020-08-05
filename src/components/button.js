@@ -6,7 +6,7 @@ const style = {
   backgroundColor: "white",
   border: "solid 2px",
   borderRadius: "9999px",
-  '&:hover' : {backgroundColor : "#c4e7df"}
+  '&:hover' : {backgroundColor : "#DDEDF4"}
 }
 
 export default function Button({ label }) {

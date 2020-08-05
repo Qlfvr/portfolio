@@ -13,7 +13,7 @@ export default function BgImage() {
       height="100%"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <polygon points="90 0, 100 0, 100 100, 50 100" fill="#c4e7df" />
+      <polygon points="90 0, 100 0, 100 100, 50 100" fill="#DDEDF4" />
     </svg>
   )
 }
