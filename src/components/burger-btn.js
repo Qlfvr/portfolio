@@ -2,7 +2,8 @@ import React from "react"
 
 export default function BurgerBtn(props) {
   const style = {
-    width: "4rem",
+    padding: "0 0.5rem",
+    margin: "0",
     boxShadow: " 0px 0px 10px 0px rgba(0,0,0,0.10)",
     display: "flex",
     flexDirection: "column",
@@ -10,7 +11,6 @@ export default function BurgerBtn(props) {
     position: "relative",
     backgroundColor: "white",
     zIndex: 1,
-    padding : "0 1rem 0 0" 
   }
 
   return (

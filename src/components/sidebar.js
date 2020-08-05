@@ -3,8 +3,19 @@ import styled from "@emotion/styled"
 import BurgerBtn from "./burger-btn"
 import { Skills, FindMe } from "../content/data"
 import Education from "./education"
+import { mq } from "../utils/utils"
 
 function Sidebar() {
+  const [isActive, setIsActive] = useState(false)
+
+  function handleClick() {
+    setIsActive(!isActive)
+  }
+
+  let marginLeft = "0px"
+
+  isActive ? (marginLeft = "0px") : (marginLeft = "-300px")
+
   const NavLink = styled.button({
     fontSize: "0.9rem",
     padding: "0 0.5rem",
@@ -27,23 +38,14 @@ function Sidebar() {
   })
 
   const Content = styled.div({
-    width: "40rem",
+    width: "300px",
     position: "relative",
     zIndex: 2,
-    backgroundColor: "white",
     padding: "1rem",
     overflow: "auto",
     direction: "rtl",
+    backgroundColor: "white",
   })
-  const [isActive, setIsActive] = useState(false)
-
-  function handleClick() {
-    setIsActive(!isActive)
-  }
-
-  let marginLeft = "-16rem"
-
-  isActive ? (marginLeft = "0rem") : (marginLeft = "-20rem")
 
   function show(event, target) {
     const tabs = document.getElementsByClassName("tab")
@@ -75,18 +77,18 @@ function Sidebar() {
 
   return (
     <div
-      css={{
+      css={mq({
         gridColumn: "1/2",
         gridRow: "1/2",
-        width: "25rem",
         maxWidth: "100vw",
+        width: ["100vw","max-content"],
         height: "100vh",
         display: "flex",
         flexDirection: "row",
         backgroundColor: "white",
         marginLeft: marginLeft,
-        transitionDuration: "0.5s",
-      }}
+        transitionDuration: "1s",
+      })}
     >
       <Content>
         <Menu>
