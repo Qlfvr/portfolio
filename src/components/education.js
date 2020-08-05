@@ -1,10 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
 
 function Education() {
   const eduData = useStaticQuery(graphql`
     query {
-      allStrapiEducation (sort: { fields: [order], order: DESC }){
+      allStrapiEducation(sort: { fields: [order], order: DESC }) {
         nodes {
           id
           Title
@@ -12,13 +13,8 @@ function Education() {
           icon {
             id
             childImageSharp {
-              fixed(width: 32, height: 32) {
-                base64
-                tracedSVG
-                aspectRatio
-                srcWebp
-                srcSetWebp
-                originalName
+              fixed(width: 32, height: 32, quality: 90, webpQuality: 90) {
+                ...GatsbyImageSharpFixed
               }
             }
           }
@@ -32,11 +28,14 @@ function Education() {
   const component = edu.map(element => {
     return (
       <div key={element.id} css={{ display: "flex" }}>
-        <img
-          src={element.icon.childImageSharp.fixed.srcWebp}
-          width="32px"
-          height="32px"
-        />
+        <div css={{ width: "32px", height: "32px" }}>
+          <Img
+            fixed={element.icon.childImageSharp.fixed}
+            objectFit="contain"
+            objectPosition="50% 50%"
+            alt=""
+          />
+        </div>
         <p css={{ paddingLeft: "1rem" }}>{element.Title}</p>
       </div>
     )
