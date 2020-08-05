@@ -8,15 +8,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
-
 export function Skills() {
   const data = useStaticQuery(graphql`
     query {
       allStrapiTechnologies {
         nodes {
           content {
-              id
+            id
             description
             title
           }
@@ -40,36 +38,36 @@ export function Skills() {
 export function FindMe() {
   const Item = styled.div({ padding: "0.2rem 0" })
 
+  const A = styled.a({ "&:hover" : { color: "#ddedf4"} })
+
   return (
     <div id="swup" className="transition-fade">
       <Item>
-        <a href="https://www.linkedin.com/in/qlfvr/">
+        <A href="https://www.linkedin.com/in/qlfvr/">
           <FontAwesomeIcon icon={faLinkedinIn} />
           <span css={{ paddingLeft: "0.5rem" }}> ./qlfvr</span>
-        </a>
+        </A>
       </Item>
       <Item>
-        <a href="#">
+        <A href="mailto:lefevre.quentin@gmail.com">
           <FontAwesomeIcon icon={faEnvelope} />
           <span css={{ paddingLeft: "0.5rem" }}>lefevre.quentin@gmail.com</span>
-        </a>
+        </A>
       </Item>
       <Item>
-        <a href="#">
+        <A href="https://discordapp.com/channels/@me/Qlfvr#2854/">
           <FontAwesomeIcon icon={faDiscord} />
           <span css={{ fontWeight: "bold", paddingLeft: "0.5rem" }}>Qlfvr</span>
           #2854
-        </a>
+        </A>
       </Item>
 
       <Item>
         <FontAwesomeIcon icon={faGithub} />
-        <a href="https://github.com/Qlfvr">
+        <A href="https://github.com/Qlfvr">
           <span css={{ paddingLeft: "0.5rem" }}> ./Qlfvr</span>
-        </a>
+        </A>
       </Item>
     </div>
   )
 }
-
-

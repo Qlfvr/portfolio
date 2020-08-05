@@ -1,9 +1,18 @@
 import React from "react"
 import { mq } from "../utils/utils"
-import  Button  from "../components/button"
+import styled from "@emotion/styled"
 
 export default function Main() {
-  return(
+  const A = styled.a({
+    width: "max-content",
+    padding: "0.5rem 1rem",
+    backgroundColor: "white",
+    border: "solid 2px",
+    borderRadius: "9999px",
+    "&:hover": { backgroundColor: "#DDEDF4" },
+  })
+
+  return (
     <div
       css={mq({
         gridColumn: "1/2",
@@ -21,22 +30,24 @@ export default function Main() {
         })}
       >
         Junior <br />
-        <span css={mq({ fontSize: ["2.5rem", "3rem", "5rem", "6rem"] })}>
+        <span css={mq({ fontSize: ["2.5rem", "3rem", "5rem", "7rem"] })}>
           Web Developer
         </span>{" "}
       </h1>
       <p
         css={mq({
-          width: ["100%", "", "35rem"],
+          width: ["100%", "", "40rem"],
           marginTop: ["2rem"],
         })}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-        vulputate dolor non ligula tempor condimentum. Quisque tortor neque,
-        mollis sed turpis eu, finibus gravida libero.
+        Currently looking for an internship as a frontend or fullstack Developer
+        in Liège, Brussels or in the surrounding areas. I am in the last stage
+        of my training @Becode Liège. Solution-oriented, I have learned by doing
+        for the last 7 months and I wish to find a company to keep growing as a
+        web developer.
       </p>
 
-      <Button label="Me contacter" />
+      <A href="https://www.linkedin.com/in/qlfvr/">Contact me on LinkedIn</A>
     </div>
   )
 }

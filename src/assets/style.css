@@ -19,9 +19,7 @@ a {
   font-weight: bold;
 }
 
-a:hover {
-  color: #DDEDF4;
-}
+
 
 :focus {
   outline: 0;

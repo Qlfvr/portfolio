@@ -9,6 +9,6 @@ const style = {
   '&:hover' : {backgroundColor : "#DDEDF4"}
 }
 
-export default function Button({ label }) {
-  return <button css={style}>{label}</button>
+export default function Button({children }) {
+  return <button css={style}>{children}</button>
 }
